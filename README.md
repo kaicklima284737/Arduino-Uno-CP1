@@ -4,10 +4,15 @@ Monitor de Luminosidade com Alerta Sonoro 💡📝
 Alunos / Rms
 
 Kaick Lima Silva - 574060
+
 Gustavo Basso - 572623
+
 Guilherme Sales - 572933
+
 Pedro Feltrin Geraldes - 569038
+
 Guilherme Kozikoski Failla - 571611
+
 
 ---------------------------------------------------------------------------------------------------------------
 Descrição:
@@ -85,61 +90,91 @@ Montagem do Código:
 ## Declaro as Variáveis para utilização em código: 
 
 ° const int pinoLDR = A0;
+
 ° const int ledVerde = 13;
+
 ° const int ledAmarelo = 11;
+
 ° const int ledVermelho = 10;
+
 ° const int buzzer = 7;
 
 ## Defino um valor para a Varíavel Luminosidade, que será utilizado em conjunto ao LDR para ascender os leds e o buzzer:
+
 
 int luminosidade = 0;
 
 ## Dentro do void setup, defino as Váriaveis e o buzzer como OUTPUT, sem contar o pinoldr:
 
 void setup() {
+
   pinMode(ledVerde, OUTPUT);
+  
   pinMode(ledAmarelo, OUTPUT);
+  
   pinMode(ledVermelho, OUTPUT);
+  
   pinMode(buzzer, OUTPUT);
+  
   Serial.begin(9600); 
+  
 }
 
 ## Dentro do void loop, leio a luminosidade declarada no pino A0, e printo uma mensagem na tela com o valor atual de luminosidade:
 
 void loop() {
+
   luminosidade = analogRead(A0);
+  
   Serial.print("Valor da Luminosidade: ");
+  
   Serial.println(luminosidade);
 
 ## Começo um If (Se) a luminosidade estiver acima dos paramêtros permitidos, onde irá ativar apenas o LedVermelho, e ativar o Buzzer por 3 segundos e esperar 3 segundos.
 
   if (luminosidade > 830) {
+  
     // Estado: PROBLEMA
+    
     digitalWrite(ledVerde, LOW);
+    
     digitalWrite(ledAmarelo, LOW);
+    
     digitalWrite(ledVermelho, HIGH);
 
     tone(buzzer, 3000); 
+    
     delay(3000);
 
 ## Se a luminosidade estiver dentro dos paramêtros permitidos, mas acima do ideal, ativará o LedAmarelo numa função else if e não tocará o buzzer.
     
   } 
   else if (luminosidade >= 400 && luminosidade <= 830) {
+  
     // Estado: ALERTA
+    
     digitalWrite(ledVerde, LOW);
+    
     digitalWrite(ledAmarelo, HIGH);
+    
     digitalWrite(ledVermelho, LOW);
+    
     noTone(buzzer);
+    
   } 
 
 ## Mas caso nenhuma das opções sejam verdadeiras, o LedVerde vai ser ativado, indicando que tudo está dentro dos parâmetros desejados e o buzzer não irá tocar.
 
   else {
+  
     // Estado: OK
+    
     digitalWrite(ledVerde, HIGH);
+    
     digitalWrite(ledAmarelo, LOW);
+    
     digitalWrite(ledVermelho, LOW);
+    
     noTone(buzzer);
 
   }
