@@ -200,3 +200,7 @@ Link para Exércicio Completo:
 Link para dôminio do Template digital via Tinkercard:
 
 https://www.tinkercad.com/things/aSazIqzX2dE-swanky-waasa-curcan/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard&sharecode=NSCtLN8UP-vfwpvHQbAytcM7703HTVuPjnbkB33sQwg
+
+---------------------------------------------------------------------------------------------------------------
+Link para vídeo do Canva
+https://canva.link/72o369uuss0x3lj
